@@ -1,0 +1,80 @@
+<h1>Listado de Estudiantes</h1>
+@if(isLoading) {
+  <div class="spinner-container">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    <p>Cargando datos...</p>
+  </div>
+}
+@else {
+
+
+<div style="text-align: right; margin-bottom: 1rem;">
+  <button mat-raised-button color="primary" (click)="crearEstudiante()">
+    + Nuevo Estudiante
+  </button>
+</div>
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- ID -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let estudiante">{{ estudiante.id }}</td>
+  </ng-container>
+
+  <!-- Nombre -->
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef>Nombre</th>
+    <td mat-cell *matCellDef="let estudiante">{{ estudiante.nombre }}</td>
+  </ng-container>
+
+  <!-- Apellido -->
+  <ng-container matColumnDef="apellido">
+    <th mat-header-cell *matHeaderCellDef>Apellido</th>
+    <td mat-cell *matCellDef="let estudiante">{{ estudiante.apellido }}</td>
+  </ng-container>
+
+  <!-- Edad -->
+  <ng-container matColumnDef="edad">
+    <th mat-header-cell *matHeaderCellDef>Edad</th>
+    <td mat-cell *matCellDef="let estudiante">{{ estudiante.edad }}</td>
+  </ng-container>
+
+  <!-- Email -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let estudiante">{{ estudiante.email }}</td>
+  </ng-container>
+
+  <!-- Fecha Nacimiento -->
+  <ng-container matColumnDef="fechaNacimiento">
+    <th mat-header-cell *matHeaderCellDef>Fecha Nacimiento</th>
+    <td mat-cell *matCellDef="let estudiante">
+      {{ estudiante.fechaNacimiento | date:'longDate' }}
+    </td>
+  </ng-container>
+
+  <!-- Activo -->
+  <ng-container matColumnDef="activo">
+    <th mat-header-cell *matHeaderCellDef>Activo</th>
+    <td mat-cell *matCellDef="let estudiante">
+      <span [ngClass]="{ 'activo': estudiante.activo, 'inactivo': !estudiante.activo }">
+        {{ estudiante.activo ? 'Sí' : 'No' }}
+      </span>
+    </td>
+  </ng-container>
+  <!-- Acciones -->
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef>Acciones</th>
+    <td mat-cell *matCellDef="let estudiante">
+      <button mat-button (click)="editarEstudiante(estudiante)">Editar</button>
+      <button mat-button (click)="eliminarEstudiante(estudiante)">Eliminar</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+
+</table>
+}
