@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>{{form.value.id ? 'Editar' : 'Nuevo'}} Estudiante</h2>
+<h2 mat-dialog-title class="titulo">{{form.value.id ? 'Editar' : 'Nuevo'}} Estudiante</h2>
 
 <form [formGroup]="form" (ngSubmit)="guardar()">
 <mat-form-field appearance="fill" class="full-width">
@@ -30,11 +30,11 @@
   <input matInput formControlName="fechaNacimiento" required>
 </mat-form-field>
 
-<mat-checkbox formControlName="activo">Activo</mat-checkbox>
+<mat-checkbox class="active" formControlName="activo">Activo</mat-checkbox>
 
 
 <div style=" margin-top: 1rem; text-align: right;">
-  <button mat-icon-button type="button" (click)="cancelar()">Cancelar</button>
-  <button mat-icon-button color="primary" type="submit">Guardar</button>
+  <button mat-icon-button type="button"  (click)="cancelar()"><mat-icon>cancel</mat-icon></button>
+  <button mat-icon-button color="primary" type="submit"><mat-icon>save</mat-icon></button>
 </div>
 </form>

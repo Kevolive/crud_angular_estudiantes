@@ -2,9 +2,9 @@
   <span>📚 Mi CRUD Angular</span>
 
   @if(isLoggedIn$() | async) {
-    <button mat-button color="warn" (click)="logout()" [disabled]="isLoggingOut">
-      Cerrar sesión
-    </button>
+  <button mat-button color="warn" (click)="logout()" [disabled]="isLoggingOut">
+    Cerrar sesión
+  </button>
   }
 </nav>
 
@@ -12,17 +12,12 @@
 <router-outlet></router-outlet>
 
 <!-- Spinner -->
- <div style="padding: 10px; background: #f5f5f5; display: flex; justify-content: center;">
-@if(isLoggingOut) {
+<div class="cerrar-sesion">
+  @if(isLoggingOut) {
   <div class="overlay">
     <mat-progress-spinner mode="indeterminate" diameter="100"></mat-progress-spinner>
     <p>Cerrando sesión...</p>
   </div>
-}
+  }
 
- </div>
-
-
-
-
-
+</div>

@@ -8,12 +8,13 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { EstudianteFormComponent } from '../components/estudiante-form.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
   selector: 'app-estudiantes-page',
   standalone: true,
-  imports: [CommonModule, MatTableModule, MatDialogModule,MatProgressSpinnerModule, MatIconModule, MatTooltipModule   ],
+  imports: [CommonModule, MatTableModule, MatDialogModule,MatProgressSpinnerModule, MatIconModule, MatTooltipModule, MatButtonModule ],
   templateUrl: './estudiantes-page.component.html',
   styleUrls: ['./estudiantes-page.component.css']
 })

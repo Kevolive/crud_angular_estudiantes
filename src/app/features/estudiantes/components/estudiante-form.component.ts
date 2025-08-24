@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-estudiante-form',
@@ -15,7 +17,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule],
+    MatCheckboxModule, MatButtonModule, MatIconModule],
   templateUrl: './estudiante-form.component.html',
   styleUrl: './estudiante-form.component.css'
 })

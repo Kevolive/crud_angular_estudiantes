@@ -3,11 +3,12 @@ import { Router, RouterOutlet } from '@angular/router';
 import { AuthService } from './features/auth/services/auth.service';
 import { AsyncPipe, NgIf } from '@angular/common';
 import {  MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncPipe, MatProgressSpinnerModule],
+  imports: [RouterOutlet, AsyncPipe, MatProgressSpinnerModule, MatButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

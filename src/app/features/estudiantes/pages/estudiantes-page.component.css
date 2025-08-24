@@ -1,3 +1,4 @@
+
 table {
   width: 100%;
   margin-top: 1rem;
@@ -6,6 +7,10 @@ table {
 h1 {
   text-align: center;
   margin-bottom: 1rem;
+  color: #3f51b5;
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
 }
 .spinner-container {
   display: flex;
@@ -13,4 +18,52 @@ h1 {
   justify-content: center;
   align-items: center;
   height: 300px;
+}
+
+.full-width-table {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th.mat-header-cell {
+  font-weight: bold;
+  background: #f5f5f5;
+  text-align: center;
+}
+
+td.mat-cell, th.mat-header-cell {
+  text-align: center;
+  padding: 12px;
+}
+
+.activo {
+  color: green;
+  font-weight: bold;
+}
+
+.inactivo {
+  color: red;
+  font-weight: bold;
+}
+
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+
+.button-delete {
+color: red;
+
+}
+.button-edit {
+  color: blue;
+}
+
+.container{
+  margin: 20px;
+  padding: 100px;
 }
