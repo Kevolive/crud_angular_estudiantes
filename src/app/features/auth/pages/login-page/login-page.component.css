@@ -10,3 +10,11 @@
   width: 100%;
   margin-bottom: 15px;
 }
+
+.error-message {
+  color: #d32f2f; /* rojo tipo Angular Material */
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+}
+

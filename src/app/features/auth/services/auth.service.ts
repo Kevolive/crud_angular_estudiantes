@@ -11,25 +11,25 @@ export class AuthService {
   constructor() {
     const saved = localStorage.getItem('loggedIn');
     this.isLoggedInSubject.next(saved === 'true');
-   }
+  }
 
-   login(username: string, password: string): boolean {
-     if(username === 'kevin@gmail.com' && password === '123456') {
-        localStorage.setItem('loggedIn', 'true');
-        this.isLoggedInSubject.next(true);
-        return true;
-     }
-     return false;
-   }
+  login(username: string, password: string): boolean {
+    if (username === 'kevin@gmail.com' && password === '123456') {
+      localStorage.setItem('loggedIn', 'true');
+      this.isLoggedInSubject.next(true);
+      return true;
+    }
+    return false;
+  }
 
-   logout(): void{
-      localStorage.removeItem('loggedIn');
-      this.isLoggedInSubject.next(false);
-   }
-   isLoggedIn$(): Observable<boolean> {
-     return this.isLoggedInSubject.asObservable();
-   }
-   isLoggedInSync(): boolean {
-      return this.isLoggedInSubject.getValue();
-   }
+  logout(): void {
+    localStorage.removeItem('loggedIn');
+    this.isLoggedInSubject.next(false);
+  }
+  isLoggedIn$(): Observable<boolean> {
+    return this.isLoggedInSubject.asObservable();
+  }
+  isLoggedInSync(): boolean {
+    return this.isLoggedInSubject.getValue();
+  }
 }

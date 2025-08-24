@@ -37,4 +37,10 @@
       Ingresar
     </button>
   </form>
+
+  <div class="error-message">
+    @if(errorMessage) {
+      <p class="error-message">{{ errorMessage }}</p>
+    }
+  </div>
 </div>
